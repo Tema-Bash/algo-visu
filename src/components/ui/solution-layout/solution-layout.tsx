@@ -1,4 +1,3 @@
-import React from "react";
 import { ReturnButton } from "../return-button/return-button";
 import { Link } from "react-router-dom";
 import styles from "./solution-layout.module.css";
