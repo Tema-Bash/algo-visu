@@ -7,10 +7,12 @@ import { SolutionLayout } from "../ui/solution-layout/solution-layout";
 import styles from "./string.module.css";
 
 export const StringComponent: React.FC = () => {
-  const [currentString, setCurrentString] = useState<string[]>([]);
-  const [sortingString, setSortingString] = useState<string[][]>([]);
+  const [visibleString, setVisibleString] = useState<string[]>([]);
+  const [currentString, setCurrentString] = useState<string[][]>([]);
   const [visible, setVisible] = useState(false);
-  const [count, setCount] = useState(0);
+  let count = 0;
+  const [count2, setCount2] = useState(0);
+  const [maxCount, setMaxCount] = useState(11);
 
   const swap = (
     arr: string[],
@@ -22,12 +24,19 @@ export const StringComponent: React.FC = () => {
     arr[secondIndex] = temp;
   };
 
+  //функция-слушатель "сабмит-а"
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    setCount(0);
+    count = 0;
+    setCount2(0);
+    setCurrentString([]);
+    setVisibleString([]);
+    setVisible(true);
+    setMaxCount(event.target[0].value.length);
     stringSort(event.target[0].value);
   };
 
+  //функция генерит матрицу для вывода
   function stringSort(string: string) {
     let StringTemp = [string.split("")];
     for (let i = 0; i < string.length / 2; i++) {
@@ -36,52 +45,74 @@ export const StringComponent: React.FC = () => {
       StringTemp.push(temp);
     }
 
-    setSortingString(StringTemp);
+    setCurrentString(StringTemp); // [[a b c d],[d b c a],[d c b a]]
   }
 
-  useEffect(() => {
-    setCurrentString(sortingString[0]);
-    console.log(`sortingString[][] change`);
-  }, [sortingString]);
-
-  useEffect(() => {
-    console.log(`count is change`);
-  }, [count]);
-
-  useEffect(() => {
-    console.log(`currentString[] change`);
-    if (currentString?.length !== 0) {
-      setCount(count + 1);
-      setVisible(true);
-      setTimeout(() => {
-        console.log(`timeout 1s`);
-        setCurrentString(sortingString[count]);
-        console.log(`setCurrentString(sortingString[${count}]) `);
-      }, 1000);
-    }
-  }, [currentString]);
-
   function circleState(i: number): ElementStates {
-    //console.log(`i is ${i}`);
-    //console.log(`count is ${count}`);
-    if (i < count) {
-      return ElementStates.Modified;
-    } else if ((i = count)) {
+    //вычисляем состояние кружка по номеру
+    console.log(`i is ${i}`);
+    console.log(`count2 is ${count2}`);
+
+    if (count2 === i || count2 == maxCount - 1 - i) {
+      console.log(`Changing`);
       return ElementStates.Changing;
+    } else if (count2 > i || count2 > maxCount - 1 - i) {
+      console.log(`Modified`);
+      return ElementStates.Modified;
+    } else if (count2 < i || count2 < maxCount - 1 - i) {
+      console.log(`Default`);
+      return ElementStates.Default;
     } else {
+      console.log(`oh no ifs ends`);
       return ElementStates.Default;
     }
   }
 
+  //зацикленная функция
+  function updateString() {
+    console.log(`count is ${count}`);
+    //console.log(`visibleString[] change`);
+    //console.log(`visiblestring now ${currentString[count]}`);
+    setVisibleString(currentString[count]);
+    count++;
+  }
+
+  React.useEffect(() => {
+    console.log(`setInterval`);
+
+    const interval = setInterval(() => {
+      if (count >= maxCount - 1) {
+        console.log(`deleteInterval count >= maxCount`);
+        clearInterval(interval);
+      }
+      if (visible === true) {
+        //setCount2((count2) => count2 + 1);
+
+        updateString();
+      }
+    }, 2000);
+
+    return () => {
+      console.log(`deleteInterval после выхода со странички`);
+      clearInterval(interval); //очищаем интервал после выхода со странички
+    };
+  }, [visible, currentString]);
+
   return (
     <SolutionLayout title="Строка">
       <form className={styles.imputContainer} onSubmit={handleSubmit}>
-        <Input placeholder={`Введите текст`} extraClass={styles.inputFild} />
+        <Input
+          type={"text"}
+          placeholder={`Введите текст`}
+          isLimitText={true}
+          maxLength={11}
+          extraClass={styles.inputFild}
+        />
         <Button text={`Развернуть`} type={`submit`} />
       </form>
       <div className={styles.circlesContainer}>
         {visible &&
-          currentString?.map((el, i) => {
+          visibleString?.map((el, i) => {
             return <Circle key={i} letter={el} state={circleState(i)} />;
           })}
       </div>

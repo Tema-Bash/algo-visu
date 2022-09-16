@@ -33,15 +33,15 @@ export const FibonacciPage: React.FC = () => {
     }
   }
 
-  function updateTime() {
+  function updateArr() {
     count++;
     setVisibleArr((visibleArr) => [...visibleArr, currentArr[count]]);
   }
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      if (visible === true) {
-        updateTime();
+      if (visible) {
+        updateArr();
       }
       if (count >= maxCount) {
         clearInterval(interval);
