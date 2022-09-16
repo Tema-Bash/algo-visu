@@ -1,10 +1,90 @@
-import React from "react";
+import React, { Component, useEffect, useRef, useState } from "react";
+import { isThisTypeNode } from "typescript";
+import { ElementStates } from "../../types/element-states";
+import { Button } from "../ui/button/button";
+import { Circle } from "../ui/circle/circle";
+import { Input } from "../ui/input/input";
 import { SolutionLayout } from "../ui/solution-layout/solution-layout";
+import Stack from "./stack";
+import styles from "./stack-page.module.css";
+import { getCircleState } from "./utils";
+
+const stack = new Stack<number>();
 
 export const StackPage: React.FC = () => {
+  const [inputValue, setInputValue] = useState<number>(0);
+  const [instanceStack, setInstanceStack] = useState<number[]>([]);
+  const [stackSize, setStackSize] = useState(stack.getSize);
+
+  function pushItem() {
+    stack.push(inputValue);
+    setInstanceStack([...instanceStack, inputValue]);
+    setTimeout(() => {
+      setStackSize(stack.getSize);
+    }, 1000);
+  }
+
+  function popItem() {
+    let tmp = [...instanceStack];
+    tmp.pop();
+    stack.pop();
+    setStackSize(stack.getSize);
+    setTimeout(() => {
+      setInstanceStack(tmp);
+    }, 1000);
+  }
+
+  function clearStack() {
+    stack.clearContainer();
+    setInstanceStack([]);
+    setStackSize(0);
+  }
+
   return (
     <SolutionLayout title="Стек">
-
+      <div className={styles.container}>
+        <div className={styles.formContainer}>
+          <Input
+            placeholder={`Введите значение`}
+            type={`number`}
+            onInput={(e) =>
+              setInputValue(Number((e.target as HTMLButtonElement).value))
+            }
+            isLimitText={true}
+            max={4}
+            extraClass={styles.inputFild}
+          />
+          <Button
+            text={`Добавить`}
+            onClick={pushItem}
+            disabled={stackSize >= 4}
+          />
+          <Button
+            text={`Удалить`}
+            onClick={popItem}
+            disabled={stackSize === 0}
+          />
+        </div>
+        <Button
+          text={`Очистить`}
+          onClick={clearStack}
+          disabled={stackSize === 0}
+        />
+      </div>
+      <div className={styles.circlesContainer}>
+        {instanceStack.length > 0 &&
+          instanceStack.map((el, i) => {
+            return (
+              <Circle
+                key={i}
+                head={i === stackSize - 1 ? `head` : null}
+                letter={el?.toString()}
+                index={i}
+                state={getCircleState(i, stackSize)}
+              />
+            );
+          })}
+      </div>
     </SolutionLayout>
   );
 };

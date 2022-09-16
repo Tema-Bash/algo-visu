@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Direction } from "../../types/direction";
 import { Button } from "../ui/button/button";
 import { Column } from "../ui/column/column";
@@ -141,78 +141,3 @@ export const SortingPage: React.FC = () => {
     </SolutionLayout>
   );
 };
-
-/*
-  const [columns, setColumns] = useState<any[]>();
-  const [method, setMethod] = useState<string>("selection");
-  const [sorting, setSorting] = useState<boolean>(false);
-  const [direction, setDirection] = useState<string>("up"); //up-по возрастанию down-по убыванию
-  let count = 0;
-
-  //меняет элементы массива по индексу
-  const swap = (
-    arr: string[],
-    firstIndex: number,
-    secondIndex: number
-  ): void => {
-    const temp = arr[firstIndex];
-    arr[firstIndex] = arr[secondIndex];
-    arr[secondIndex] = temp;
-  };
-
-  //генерирует массив псевдо СВ прим [79, 90, 74, 4, 55, 40, 35, 98, 55, 93, 70, 36]
-  function randomArr(): number[] {
-    let minLength = 3;
-    let maxLength = 17;
-    let randomArr = [];
-    for (
-      let i = 0;
-      i < Math.abs(Math.random() * (maxLength - minLength) + minLength);
-      i++
-    ) {
-      randomArr.push(Math.floor(Math.random() * 100));
-    }
-    return randomArr;
-  }
-
-  //заполняем массив высот
-  const handleClickGenerate = () => {
-    console.log(`handleClickGenerate`);
-    setColumns(randomArr());
-  };
-
-  //меняем чекбокс и стейт
-  const checkboxHandler = () => {
-    method === "selection" ? setMethod("bubble") : setMethod("selection");
-  };
-  /*
-  function selectionSortArr() {
-    console.log(`selection tick`);
-    console.log(columns); //[79, 90, 74, 4, 55, 40, 35, 98, 55, 93, 70, 36]
-
-    //setColumns((columns)=>[] //ставим на позицию максимальный элемент)
-  }
-
-  function buubleSortArr() {
-    console.log(`buuble tick`);
-    //setVisibleArr((visibleArr) => [...visibleArr, currentArr[count]]);
-  }
-
-  React.useEffect(() => {
-    console.log(`React.useEffect sorting, columns`);
-    const interval = setInterval(() => {
-      if (sorting && method === "buble") {
-        buubleSortArr();
-      }
-      if (sorting && method === "selection") {
-        selectionSortArr();
-      }
-    }, 1000);
-
-    return () => {
-      console.log(`clearInterval`);
-      clearInterval(interval); //очищаем интервал после выхода со странички
-    };
-  }, [sorting, columns]);
-
-*/
