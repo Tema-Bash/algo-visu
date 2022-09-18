@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+}
+
+.formContainer {
+  display: flex;
+  gap: 12px;
+}
+
+.circlesContainer {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
