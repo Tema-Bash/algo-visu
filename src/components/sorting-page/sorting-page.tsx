@@ -15,23 +15,17 @@ import {
 
 export const SortingPage: React.FC = () => {
   const [sortDirection, setSortDirection] = useState<Direction>();
-
   const [currentSortAlgorithmKind, setCurrentSortAlgorithmKind] =
     useState<SortKind>(SortKind.Select);
-
   const randomArray = useRef<number[]>(getRandomArray());
-
   const [algorithmSteps, setAlgorithmSteps] = useState<Step[]>([
     {
       currentArray: randomArray.current,
       sortedIndexes: [],
     },
   ]);
-
   const [currentAlgorithmStep, setCurrentAlgorithmStep] = useState(0);
-
   const isAlgorithmInProcess = currentAlgorithmStep < algorithmSteps.length - 1;
-
   const timer = useRef<NodeJS.Timeout>();
 
   const generateNewArray = () => {

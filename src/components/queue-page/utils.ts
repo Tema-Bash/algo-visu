@@ -4,8 +4,8 @@ import { ElementStates } from "../../types/element-states";
 export function getCircleState(
   index: number,
   el: number | null,
-  tail: number,
-  head: number
+  head: number,
+  tail: number
 ) {
   if (index == head - 1 && el !== -1) {
     return ElementStates.Changing;

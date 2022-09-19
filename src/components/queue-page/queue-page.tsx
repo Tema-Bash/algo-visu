@@ -45,7 +45,6 @@ export const QueuePage: React.FC = () => {
     setHead((head) => (head = (head + 1) % queueSize));
     setTimeout(() => {
       setInstanceQueue(tmp);
-
       setQueueLength((queueLength) => (queueLength = queueLength - 1));
     }, 1000);
   }
@@ -64,13 +63,11 @@ export const QueuePage: React.FC = () => {
         <div className={styles.formContainer}>
           <Input
             placeholder={`Введите значение`}
-            type={`number`}
             onInput={(e) =>
               setInputValue(Number((e.target as HTMLButtonElement).value))
             }
             isLimitText={true}
-            max={4}
-            extraClass={styles.inputFild}
+            maxLength={4}
           />
           <Button
             text={`Добавить`}
