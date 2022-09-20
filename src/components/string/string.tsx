@@ -29,7 +29,6 @@ export const StringComponent: React.FC = () => {
     event.preventDefault();
     let steps: string[][] = [];
     steps = inputString ? stringSort(inputString) : [[]];
-    console.log(steps);
     setAnimationStatus(true);
     setAlgorithmSteps(steps);
     setCurrentAlgorithmStep(0);

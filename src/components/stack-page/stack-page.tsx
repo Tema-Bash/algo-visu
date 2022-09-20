@@ -1,6 +1,5 @@
-import React, { Component, useEffect, useRef, useState } from "react";
-import { isThisTypeNode } from "typescript";
-import { ElementStates } from "../../types/element-states";
+import React, { useState } from "react";
+
 import { Button } from "../ui/button/button";
 import { Circle } from "../ui/circle/circle";
 import { Input } from "../ui/input/input";
@@ -15,22 +14,29 @@ export const StackPage: React.FC = () => {
   const [inputValue, setInputValue] = useState<number>(0);
   const [instanceStack, setInstanceStack] = useState<number[]>([]);
   const [stackSize, setStackSize] = useState(stack.getSize);
+  const [animationStatus, setAnimationStatus] = useState<
+    `onPush` | `onPop` | null
+  >(null);
 
   function pushItem() {
+    setAnimationStatus(`onPush`);
     stack.push(inputValue);
     setInstanceStack([...instanceStack, inputValue]);
     setTimeout(() => {
       setStackSize(stack.getSize);
+      setAnimationStatus(null);
     }, 1000);
   }
 
   function popItem() {
+    setAnimationStatus(`onPop`);
     let tmp = [...instanceStack];
     tmp.pop();
     stack.pop();
     setStackSize(stack.getSize);
     setTimeout(() => {
       setInstanceStack(tmp);
+      setAnimationStatus(null);
     }, 1000);
   }
 
@@ -56,18 +62,20 @@ export const StackPage: React.FC = () => {
           <Button
             text={`Добавить`}
             onClick={pushItem}
-            disabled={stackSize >= 4}
+            disabled={stackSize >= 12 || animationStatus === `onPop`}
+            isLoader={animationStatus === `onPush`}
           />
           <Button
             text={`Удалить`}
             onClick={popItem}
-            disabled={stackSize === 0}
+            disabled={stackSize === 0 || animationStatus === `onPush`}
+            isLoader={animationStatus === `onPop`}
           />
         </div>
         <Button
           text={`Очистить`}
           onClick={clearStack}
-          disabled={stackSize === 0}
+          disabled={stackSize === 0 || !!animationStatus}
         />
       </div>
       <div className={styles.circlesContainer}>
@@ -76,7 +84,7 @@ export const StackPage: React.FC = () => {
             return (
               <Circle
                 key={i}
-                head={i === stackSize - 1 ? `head` : null}
+                head={i === stackSize - 1 ? `top` : null}
                 letter={el?.toString()}
                 index={i}
                 state={getCircleState(i, stackSize)}
