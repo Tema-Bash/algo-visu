@@ -1,4 +1,3 @@
-import { isEditable } from "@testing-library/user-event/dist/utils";
 import { ElementStates } from "../../types/element-states";
 
 export function getCircleState(
@@ -7,10 +6,10 @@ export function getCircleState(
   head: number,
   tail: number
 ) {
-  if (index == head - 1 && el !== -1) {
+  if (index === head - 1 && el !== -1) {
     return ElementStates.Changing;
   }
-  if (index == tail && el !== -1) {
+  if (index === tail && el !== -1) {
     return ElementStates.Changing;
   } else {
     return ElementStates.Default;

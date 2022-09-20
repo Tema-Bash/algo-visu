@@ -27,6 +27,7 @@ export const SortingPage: React.FC = () => {
   const [currentAlgorithmStep, setCurrentAlgorithmStep] = useState(0);
   const isAlgorithmInProcess = currentAlgorithmStep < algorithmSteps.length - 1;
   const timer = useRef<NodeJS.Timeout>();
+  const [animationStatus, setAnimationStatus] = useState(false);
 
   const generateNewArray = () => {
     setCurrentAlgorithmStep(0);
@@ -40,7 +41,9 @@ export const SortingPage: React.FC = () => {
   };
 
   const makeSort = (currentSortDirection: Direction) => {
+    setSortDirection(currentSortDirection);
     let steps = [];
+    setAnimationStatus(true);
     if (currentSortAlgorithmKind === `bubble`) {
       steps = getBubbleSortSteps(randomArray.current, currentSortDirection);
     } else {
@@ -56,7 +59,7 @@ export const SortingPage: React.FC = () => {
           const nextStep = currentStep + 1;
           if (nextStep > steps.length - 1 && timer.current) {
             clearInterval(timer.current);
-
+            setAnimationStatus(false);
             return currentStep;
           }
           return nextStep;
@@ -91,9 +94,7 @@ export const SortingPage: React.FC = () => {
           disabled={
             sortDirection !== Direction.Ascending && isAlgorithmInProcess
           }
-          isLoader={
-            sortDirection === Direction.Ascending && isAlgorithmInProcess
-          }
+          isLoader={sortDirection === Direction.Ascending && animationStatus}
         />
         <Button
           type={`button`}
@@ -103,9 +104,7 @@ export const SortingPage: React.FC = () => {
           disabled={
             sortDirection !== Direction.Descending && isAlgorithmInProcess
           }
-          isLoader={
-            sortDirection === Direction.Descending && isAlgorithmInProcess
-          }
+          isLoader={sortDirection === Direction.Descending && animationStatus}
         />
         <Button
           type={`button`}

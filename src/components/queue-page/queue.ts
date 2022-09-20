@@ -1,4 +1,3 @@
-import { runInThisContext } from "vm";
 import { IQueue } from "./types";
 
 export class Queue<T> implements IQueue<T> {

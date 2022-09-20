@@ -5,7 +5,7 @@ import { Circle } from "../ui/circle/circle";
 import { Input } from "../ui/input/input";
 import { SolutionLayout } from "../ui/solution-layout/solution-layout";
 import styles from "./list-page.module.css";
-import { LinkedList } from "./queueList";
+import { LinkedList } from "./linkedList";
 import { getCircleState } from "./utils";
 
 const linkedList = new LinkedList<number>();

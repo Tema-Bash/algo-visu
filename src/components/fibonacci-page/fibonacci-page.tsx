@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { isTemplateExpression } from "typescript";
+import React, { useState } from "react";
 import { ElementStates } from "../../types/element-states";
 import { Button } from "../ui/button/button";
 import { Circle } from "../ui/circle/circle";
@@ -12,13 +11,14 @@ export const FibonacciPage: React.FC = () => {
   const [currentArr, setCurrentArr] = useState<number[]>([0, 1]);
   const [visibleArr, setVisibleArr] = useState<number[]>([0]);
   const [maxCount, setMaxCount] = useState(19);
+  const [animationStatus, setAnimationStatus] = useState(false);
   let count = 0;
 
   const handleSubmit = (event: any) => {
     count = 0;
     setCurrentArr([0, 1]);
     setVisibleArr([0]);
-
+    setAnimationStatus(true);
     event.preventDefault();
     setVisible(true);
     setMaxCount(event.target[0].value);
@@ -44,12 +44,13 @@ export const FibonacciPage: React.FC = () => {
         updateArr();
       }
       if (count >= maxCount) {
+        setAnimationStatus(false);
         clearInterval(interval);
       }
     }, 1000);
 
     return () => {
-      clearInterval(interval); //очищаем интервал после выхода со странички
+      clearInterval(interval);
     };
   }, [visible, currentArr]);
 
@@ -59,11 +60,16 @@ export const FibonacciPage: React.FC = () => {
         <Input
           placeholder={`Введите текст`}
           type={`number`}
+          min={1}
           max={19}
           isLimitText={true}
           extraClass={styles.inputFild}
         />
-        <Button text={`Развернуть`} type={`submit`} />
+        <Button
+          text={`Развернуть`}
+          type={`submit`}
+          isLoader={animationStatus}
+        />
       </form>
       <div className={styles.circlesContainer}>
         {visible &&

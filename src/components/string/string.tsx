@@ -21,6 +21,7 @@ export const StringComponent: React.FC = () => {
       swap(temp, i, temp.length - 1 - i);
       StringTemp.push(temp);
     }
+    StringTemp.unshift(StringTemp[0]);
     return StringTemp;
   }
 
@@ -48,7 +49,7 @@ export const StringComponent: React.FC = () => {
           return nextStep;
         });
       }
-    }, 1500);
+    }, 1000);
   };
 
   return (
@@ -62,7 +63,12 @@ export const StringComponent: React.FC = () => {
           maxLength={11}
           extraClass={styles.inputFild}
         />
-        <Button text={`Развернуть`} type={`submit`} disabled={!inputString} />
+        <Button
+          text={`Развернуть`}
+          type={`submit`}
+          disabled={!inputString}
+          isLoader={animationStatus}
+        />
       </form>
       <div className={styles.circlesContainer}>
         {algorithmSteps &&
@@ -73,7 +79,7 @@ export const StringComponent: React.FC = () => {
                 letter={el}
                 state={getCircleState(
                   index,
-                  currentAlgorithmStep,
+                  currentAlgorithmStep - 1,
                   inputString!.length,
                   animationStatus
                 )}

@@ -7,7 +7,7 @@ import { Queue } from "./queue";
 import styles from "./queue-page.module.css";
 import { getCircleState } from "./utils";
 
-const queueSize = 10; //размер очереди
+const queueSize = 10;
 const queue = new Queue<number>(queueSize);
 
 export const QueuePage: React.FC = () => {
@@ -18,7 +18,7 @@ export const QueuePage: React.FC = () => {
   const [tail, setTail] = useState(0);
 
   useEffect(() => {
-    setInstanceQueue(queue.container.fill(-1)); //-1 == undefiend [-1,-1,-1,-1,-1,-1,-1,-1,-1]
+    setInstanceQueue(queue.container.fill(-1));
   }, []);
 
   function enqueue() {
@@ -28,10 +28,11 @@ export const QueuePage: React.FC = () => {
     queue.enqueue(inputValue);
     let tmp = [...instanceQueue];
     tmp.splice(tail % queueSize, 1, inputValue);
+
     setInstanceQueue(tmp);
-    setQueueLength((queueLength) => (queueLength = queueLength + 1));
     setTimeout(() => {
       setTail((tail) => (tail = (tail + 1) % queueSize));
+      setQueueLength((queueLength) => (queueLength = queueLength + 1));
     }, 1000);
   }
 
@@ -95,7 +96,7 @@ export const QueuePage: React.FC = () => {
               tail={i === tail ? `tail` : null}
               letter={el !== -1 ? el?.toString() : undefined}
               index={i}
-              state={getCircleState(i, el, tail, head)}
+              state={getCircleState(i, el, head, tail)}
             />
           );
         })}

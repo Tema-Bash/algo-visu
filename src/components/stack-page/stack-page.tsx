@@ -46,12 +46,11 @@ export const StackPage: React.FC = () => {
         <div className={styles.formContainer}>
           <Input
             placeholder={`Введите значение`}
-            type={`number`}
             onInput={(e) =>
               setInputValue(Number((e.target as HTMLButtonElement).value))
             }
             isLimitText={true}
-            max={4}
+            maxLength={4}
             extraClass={styles.inputFild}
           />
           <Button
