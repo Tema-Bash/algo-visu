@@ -1,0 +1,16 @@
+.imputContainer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.inputFild {
+  max-width: 377px;
+}
+
+.circlesContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;
+  gap: 16px;
+}
