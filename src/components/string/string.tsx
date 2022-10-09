@@ -18,7 +18,6 @@ export const StringComponent: React.FC = () => {
     event.preventDefault()
     let steps: string[][] = []
     steps = inputString ? stringSort(inputString) : [[]]
-    console.log(steps)
     setAnimationStatus(true)
     setAlgorithmSteps(steps)
     setCurrentAlgorithmStep(0)
@@ -51,15 +50,17 @@ export const StringComponent: React.FC = () => {
           isLimitText={true}
           maxLength={11}
           extraClass={styles.inputFild}
+          data-cy="input"
         />
         <Button
           text={`Развернуть`}
           type={`submit`}
           disabled={!inputString}
           isLoader={animationStatus}
+          data-cy="submit"
         />
       </form>
-      <div className={styles.circlesContainer}>
+      <div className={styles.circlesContainer} data-cy="circleContainer">
         {algorithmSteps &&
           algorithmSteps[currentAlgorithmStep]?.map((el, index) => {
             return (

@@ -58,24 +58,28 @@ export const StackPage: React.FC = () => {
             isLimitText={true}
             maxLength={4}
             extraClass={styles.inputFild}
+            data-cy="input"
           />
           <Button
             text={`Добавить`}
             onClick={pushItem}
-            disabled={stackSize >= 12 || animationStatus === `onPop`}
+            disabled={stackSize >= 12 || animationStatus === `onPop`|| !inputValue}
             isLoader={animationStatus === `onPush`}
+            data-cy="button-add"
           />
           <Button
             text={`Удалить`}
             onClick={popItem}
             disabled={stackSize === 0 || animationStatus === `onPush`}
             isLoader={animationStatus === `onPop`}
+            data-cy="button-pop"
           />
         </div>
         <Button
           text={`Очистить`}
           onClick={clearStack}
           disabled={stackSize === 0 || !!animationStatus}
+          data-cy="button-clear"
         />
       </div>
       <div className={styles.circlesContainer}>
