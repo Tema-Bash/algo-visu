@@ -154,6 +154,7 @@ export const ListPage: React.FC = () => {
             isLimitText={true}
             maxLength={4}
             extraClass={styles.imputField}
+            data-cy={'inputValue'}
           />
           <Button
             text={`Добавить в head`}
@@ -165,6 +166,7 @@ export const ListPage: React.FC = () => {
             }
             isLoader={animationStatus === 1 ? true : false}
             extraClass={styles.button}
+            data-cy={'addToHead'}
           />
           <Button
             text={`Добавить в tail`}
@@ -176,6 +178,7 @@ export const ListPage: React.FC = () => {
             }
             isLoader={animationStatus === 2 ? true : false}
             extraClass={styles.button}
+            data-cy={'addToTail'}
           />
           <Button
             text={`Удалить из head`}
@@ -188,6 +191,7 @@ export const ListPage: React.FC = () => {
             }
             isLoader={animationStatus === 3 ? true : false}
             extraClass={styles.button}
+            data-cy={'deleteFromHead'}
           />
           <Button
             text={`Удалить из tail`}
@@ -200,6 +204,7 @@ export const ListPage: React.FC = () => {
             }
             isLoader={animationStatus === 4 ? true : false}
             extraClass={styles.button}
+            data-cy={'deleteFromTail'}
           />
         </div>
         <div className={styles.indexFunctions}>
@@ -210,6 +215,7 @@ export const ListPage: React.FC = () => {
               setInputIndex(Number((e.target as HTMLButtonElement).value))
             }
             extraClass={styles.imputField}
+            data-cy={'inputIndex'}
           />
           <Button
             text={`Добавить по индексу`}
@@ -223,12 +229,12 @@ export const ListPage: React.FC = () => {
             }
             extraClass={styles.button}
             isLoader={animationStatus === 5 ? true : false}
+            data-cy={'addByIndex'}
           />
           <Button
             text={`Удалить по индексу`}
             onClick={() => removeByIndex(inputIndex)}
             disabled={
-              !inputValue ||
               !inputIndex ||
               (animationStatus !== 6 && animationStatus !== null)
                 ? true
@@ -236,10 +242,11 @@ export const ListPage: React.FC = () => {
             }
             isLoader={animationStatus === 6 ? true : false}
             extraClass={styles.button}
+            data-cy={'deleteByIndex'}
           />
         </div>
       </div>
-      <div className={styles.circlesContainer}>
+      <div className={styles.circlesContainer} data-cy={'circle-container'}>
         {arrToRender.map((el, i) => {
           return (
             <Circle

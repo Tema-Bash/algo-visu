@@ -14,14 +14,18 @@ export const QueuePage: React.FC = () => {
   const [inputValue, setInputValue] = useState<number>(0);
   const [instanceQueue, setInstanceQueue] = useState<(number | null)[]>([]);
   const [queueLength, setQueueLength] = useState(queue.getLength);
+
   const [head, setHead] = useState(0);
   const [tail, setTail] = useState(0);
 
+  const [animationStatus, setAnimationStatus] = useState<`add` | `delete` | null >(null);
+    
   useEffect(() => {
     setInstanceQueue(queue.container.fill(-1));
   }, []);
 
   function enqueue() {
+    setAnimationStatus('add')
     if (queueLength >= queueSize) {
       throw new Error("Maximum length exceeded");
     }
@@ -33,10 +37,12 @@ export const QueuePage: React.FC = () => {
     setTimeout(() => {
       setTail((tail) => (tail = (tail + 1) % queueSize));
       setQueueLength((queueLength) => (queueLength = queueLength + 1));
+      setAnimationStatus(null);
     }, 1000);
   }
 
   function dequeue() {
+    setAnimationStatus('delete')
     if (queue.isEmpty()) {
       throw new Error("No elements in the queue");
     }
@@ -47,6 +53,7 @@ export const QueuePage: React.FC = () => {
     setTimeout(() => {
       setInstanceQueue(tmp);
       setQueueLength((queueLength) => (queueLength = queueLength - 1));
+      setAnimationStatus(null);
     }, 1000);
   }
 
@@ -69,25 +76,31 @@ export const QueuePage: React.FC = () => {
             }
             isLimitText={true}
             maxLength={4}
+            data-cy="input"
           />
           <Button
             text={`Добавить`}
             onClick={enqueue}
-            disabled={queueLength >= queueSize}
+            isLoader={animationStatus === `add`}
+            disabled={queueLength >= queueSize|| !inputValue}
+            data-cy="button-enqueue"
           />
           <Button
             text={`Удалить`}
             onClick={dequeue}
+            isLoader={animationStatus === `delete`}
             disabled={queueLength === 0}
+            data-cy="button-dequeue"
           />
         </div>
         <Button
           text={`Очистить`}
           onClick={clear}
           disabled={queueLength === 0}
+          data-cy="clear"
         />
       </div>
-      <div className={styles.circlesContainer}>
+      <div className={styles.circlesContainer} data-cy={'circle-container'}>
         {instanceQueue.map((el, i) => {
           return (
             <Circle

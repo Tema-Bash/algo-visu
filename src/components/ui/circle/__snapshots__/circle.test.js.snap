@@ -11,12 +11,14 @@ Object {
       >
         <div
           class="text text_type_input text_color_input mb-4 absolute head string"
+          data-cy="head"
           data-testid="head"
         >
           a
         </div>
         <div
           class="circle   default"
+          data-cy="circle"
           data-testid="middleDiv"
         >
           <p
@@ -30,6 +32,7 @@ Object {
         />
         <div
           class="text text_type_input text_color_input mt-4 absolute tail30 element"
+          data-cy="tail"
           data-testid="tail"
         />
       </div>
@@ -42,12 +45,14 @@ Object {
     >
       <div
         class="text text_type_input text_color_input mb-4 absolute head string"
+        data-cy="head"
         data-testid="head"
       >
         a
       </div>
       <div
         class="circle   default"
+        data-cy="circle"
         data-testid="middleDiv"
       >
         <p
@@ -61,6 +66,7 @@ Object {
       />
       <div
         class="text text_type_input text_color_input mt-4 absolute tail30 element"
+        data-cy="tail"
         data-testid="tail"
       />
     </div>
@@ -130,10 +136,12 @@ Object {
       >
         <div
           class="text text_type_input text_color_input mb-4 absolute head element"
+          data-cy="head"
           data-testid="head"
         />
         <div
           class="circle   default"
+          data-cy="circle"
           data-testid="middleDiv"
         >
           <p
@@ -149,6 +157,7 @@ Object {
         </p>
         <div
           class="text text_type_input text_color_input mt-4 absolute tail60 element"
+          data-cy="tail"
           data-testid="tail"
         />
       </div>
@@ -161,10 +170,12 @@ Object {
     >
       <div
         class="text text_type_input text_color_input mb-4 absolute head element"
+        data-cy="head"
         data-testid="head"
       />
       <div
         class="circle   default"
+        data-cy="circle"
         data-testid="middleDiv"
       >
         <p
@@ -180,6 +191,7 @@ Object {
       </p>
       <div
         class="text text_type_input text_color_input mt-4 absolute tail60 element"
+        data-cy="tail"
         data-testid="tail"
       />
     </div>
@@ -249,10 +261,12 @@ Object {
       >
         <div
           class="text text_type_input text_color_input mb-4 absolute head element"
+          data-cy="head"
           data-testid="head"
         />
         <div
           class="circle   default"
+          data-cy="circle"
           data-testid="middleDiv"
         >
           <p
@@ -268,6 +282,7 @@ Object {
         />
         <div
           class="text text_type_input text_color_input mt-4 absolute tail30 element"
+          data-cy="tail"
           data-testid="tail"
         />
       </div>
@@ -280,10 +295,12 @@ Object {
     >
       <div
         class="text text_type_input text_color_input mb-4 absolute head element"
+        data-cy="head"
         data-testid="head"
       />
       <div
         class="circle   default"
+        data-cy="circle"
         data-testid="middleDiv"
       >
         <p
@@ -299,6 +316,7 @@ Object {
       />
       <div
         class="text text_type_input text_color_input mt-4 absolute tail30 element"
+        data-cy="tail"
         data-testid="tail"
       />
     </div>
@@ -368,6 +386,7 @@ Object {
       >
         <div
           class="text text_type_input text_color_input mb-4 absolute head element"
+          data-cy="head"
           data-testid="head"
         >
           <div
@@ -376,10 +395,12 @@ Object {
           >
             <div
               class="text text_type_input text_color_input mb-4 absolute head element"
+              data-cy="head"
               data-testid="head"
             />
             <div
               class="circle   default"
+              data-cy="circle"
               data-testid="middleDiv"
             >
               <p
@@ -395,12 +416,14 @@ Object {
             />
             <div
               class="text text_type_input text_color_input mt-4 absolute tail30 element"
+              data-cy="tail"
               data-testid="tail"
             />
           </div>
         </div>
         <div
           class="circle   default"
+          data-cy="circle"
           data-testid="middleDiv"
         >
           <p
@@ -414,6 +437,7 @@ Object {
         />
         <div
           class="text text_type_input text_color_input mt-4 absolute tail30 element"
+          data-cy="tail"
           data-testid="tail"
         />
       </div>
@@ -426,6 +450,7 @@ Object {
     >
       <div
         class="text text_type_input text_color_input mb-4 absolute head element"
+        data-cy="head"
         data-testid="head"
       >
         <div
@@ -434,10 +459,12 @@ Object {
         >
           <div
             class="text text_type_input text_color_input mb-4 absolute head element"
+            data-cy="head"
             data-testid="head"
           />
           <div
             class="circle   default"
+            data-cy="circle"
             data-testid="middleDiv"
           >
             <p
@@ -453,12 +480,14 @@ Object {
           />
           <div
             class="text text_type_input text_color_input mt-4 absolute tail30 element"
+            data-cy="tail"
             data-testid="tail"
           />
         </div>
       </div>
       <div
         class="circle   default"
+        data-cy="circle"
         data-testid="middleDiv"
       >
         <p
@@ -472,6 +501,7 @@ Object {
       />
       <div
         class="text text_type_input text_color_input mt-4 absolute tail30 element"
+        data-cy="tail"
         data-testid="tail"
       />
     </div>
@@ -541,10 +571,12 @@ Object {
       >
         <div
           class="text text_type_input text_color_input mb-4 absolute head element"
+          data-cy="head"
           data-testid="head"
         />
         <div
           class="circle   default"
+          data-cy="circle"
           data-testid="middleDiv"
         >
           <p
@@ -558,6 +590,7 @@ Object {
         />
         <div
           class="text text_type_input text_color_input mt-4 absolute tail30 element"
+          data-cy="tail"
           data-testid="tail"
         >
           <div
@@ -566,10 +599,12 @@ Object {
           >
             <div
               class="text text_type_input text_color_input mb-4 absolute head element"
+              data-cy="head"
               data-testid="head"
             />
             <div
               class="circle   default"
+              data-cy="circle"
               data-testid="middleDiv"
             >
               <p
@@ -585,6 +620,7 @@ Object {
             />
             <div
               class="text text_type_input text_color_input mt-4 absolute tail30 element"
+              data-cy="tail"
               data-testid="tail"
             />
           </div>
@@ -599,10 +635,12 @@ Object {
     >
       <div
         class="text text_type_input text_color_input mb-4 absolute head element"
+        data-cy="head"
         data-testid="head"
       />
       <div
         class="circle   default"
+        data-cy="circle"
         data-testid="middleDiv"
       >
         <p
@@ -616,6 +654,7 @@ Object {
       />
       <div
         class="text text_type_input text_color_input mt-4 absolute tail30 element"
+        data-cy="tail"
         data-testid="tail"
       >
         <div
@@ -624,10 +663,12 @@ Object {
         >
           <div
             class="text text_type_input text_color_input mb-4 absolute head element"
+            data-cy="head"
             data-testid="head"
           />
           <div
             class="circle   default"
+            data-cy="circle"
             data-testid="middleDiv"
           >
             <p
@@ -643,6 +684,7 @@ Object {
           />
           <div
             class="text text_type_input text_color_input mt-4 absolute tail30 element"
+            data-cy="tail"
             data-testid="tail"
           />
         </div>
@@ -714,10 +756,12 @@ Object {
       >
         <div
           class="text text_type_input text_color_input mb-4 absolute head element"
+          data-cy="head"
           data-testid="head"
         />
         <div
           class="circle   default"
+          data-cy="circle"
           data-testid="middleDiv"
         >
           <p
@@ -731,6 +775,7 @@ Object {
         />
         <div
           class="text text_type_input text_color_input mt-4 absolute tail30 string"
+          data-cy="tail"
           data-testid="tail"
         >
           b
@@ -745,10 +790,12 @@ Object {
     >
       <div
         class="text text_type_input text_color_input mb-4 absolute head element"
+        data-cy="head"
         data-testid="head"
       />
       <div
         class="circle   default"
+        data-cy="circle"
         data-testid="middleDiv"
       >
         <p
@@ -762,6 +809,7 @@ Object {
       />
       <div
         class="text text_type_input text_color_input mt-4 absolute tail30 string"
+        data-cy="tail"
         data-testid="tail"
       >
         b

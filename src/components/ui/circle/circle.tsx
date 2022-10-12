@@ -31,6 +31,7 @@ export const Circle: React.FC<CircleProps> = ({
           styles[typeof head === 'string' ? 'string' : 'element']
         }`}
         data-testid={'head'}
+        data-cy={'head'}
       >
         {head}
       </div>
@@ -61,6 +62,7 @@ export const Circle: React.FC<CircleProps> = ({
           styles[typeof tail === 'string' ? 'string' : 'element']
         }`}
         data-testid={'tail'}
+        data-cy={'tail'}
       >
         {tail}
       </div>
