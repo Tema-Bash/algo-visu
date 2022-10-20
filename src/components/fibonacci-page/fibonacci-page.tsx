@@ -7,8 +7,9 @@ import { SolutionLayout } from "../ui/solution-layout/solution-layout";
 import styles from "./fibonacci-page.module.css";
 
 export const FibonacciPage: React.FC = () => {
+  const [inputString, setInputString] = useState<string | null>()
   const [visible, setVisible] = useState<boolean>(false);
-  const [currentArr, setCurrentArr] = useState<number[]>([0, 1]);
+  const [currentArr, setCurrentArr] = useState<number[]>([]);
   const [visibleArr, setVisibleArr] = useState<number[]>([0]);
   const [maxCount, setMaxCount] = useState(19);
   const [animationStatus, setAnimationStatus] = useState(false);
@@ -58,15 +59,19 @@ export const FibonacciPage: React.FC = () => {
     <SolutionLayout title="Последовательность Фибоначчи">
       <form className={styles.imputContainer} onSubmit={handleSubmit}>
         <Input
+          onInput={(e) => setInputString((e.target as HTMLButtonElement).value)}
           placeholder={`Введите текст`}
           type={`number`}
           min={1}
           max={19}
           isLimitText={true}
           extraClass={styles.inputFild}
+          data-cy="input"
         />
         <Button
           text={`Развернуть`}
+          data-cy="submit"
+          disabled={!inputString}
           type={`submit`}
           isLoader={animationStatus}
         />
@@ -80,6 +85,7 @@ export const FibonacciPage: React.FC = () => {
                 letter={el?.toString()}
                 index={i}
                 state={ElementStates.Default}
+                data-cy="circle-container"
               />
             );
           })}
