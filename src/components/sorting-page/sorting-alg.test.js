@@ -1,5 +1,7 @@
 import { getSelectSortSteps, getBubbleSortSteps } from './utils'
 
+const CURRENT_ARRAY = [3, 8, 5, 9];
+
 describe('select sorting tests', () => {
   it('select sorting empty array is correct', () => {
     expect(getSelectSortSteps([])).toStrictEqual([
@@ -91,7 +93,6 @@ describe('bubble sorting tests', () => {
   })
 
   it('bubble sorting array is correct', () => {
-    console.log(getBubbleSortSteps([3, 8, 5, 9]))
     expect(getBubbleSortSteps([3, 8, 5, 9])).toStrictEqual([
       {
         currentArray: [3, 8, 5, 9],

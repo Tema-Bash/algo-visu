@@ -1,3 +1,5 @@
+import {HAVE_CSS, BORDER_COLOR, RGB_0_50_255, RGB_210_82_225, RGB_127_224_81} from './e2eContsts'
+
 describe('app has been launched and routing worked correctly', () => {
   beforeEach(function() {
     cy.visit('/');
@@ -29,16 +31,16 @@ describe('string work correctly', () => {
     cy.get('[data-cy="circle"]').each((el,i) => {
       if(i===0){
         cy.wrap(el).should('have.text', `a`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }else if (i===1){
         cy.wrap(el).should('have.text', `b`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }else if (i===2){
         cy.wrap(el).should('have.text', `c`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }else if (i===3){
         cy.wrap(el).should('have.text', `d`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }
     })
 
@@ -47,16 +49,16 @@ describe('string work correctly', () => {
     cy.get('[data-cy="circle"]').each((el,i) => {
       if(i===0){
         cy.wrap(el).should('have.text', `a`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
       }else if (i===1){
         cy.wrap(el).should('have.text', `b`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }else if (i===2){
         cy.wrap(el).should('have.text', `c`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }else if (i===3){
         cy.wrap(el).should('have.text', `d`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
       }
     })
 
@@ -65,16 +67,16 @@ describe('string work correctly', () => {
     cy.get('[data-cy="circle"]').each((el,i) => {
       if(i===0){
         cy.wrap(el).should('have.text', `d`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(127, 224, 81)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_127_224_81);
       }else if (i===1){
         cy.wrap(el).should('have.text', `b`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
       }else if (i===2){
         cy.wrap(el).should('have.text', `c`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
       }else if (i===3){
         cy.wrap(el).should('have.text', `a`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(127, 224, 81)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_127_224_81);
       }
     })
 
@@ -83,16 +85,16 @@ describe('string work correctly', () => {
     cy.get('[data-cy="circle"]').each((el,i) => {
       if(i===0){
         cy.wrap(el).should('have.text', `d`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(127, 224, 81)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_127_224_81);
       }else if (i===1){
         cy.wrap(el).should('have.text', `c`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(127, 224, 81)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_127_224_81);
       }else if (i===2){
         cy.wrap(el).should('have.text', `b`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(127, 224, 81)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_127_224_81);
       }else if (i===3){
         cy.wrap(el).should('have.text', `a`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(127, 224, 81)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_127_224_81);
       }
     })
   });
@@ -182,7 +184,7 @@ describe('stack work correctly', () => {
     cy.get('[data-cy="circle"]').each((el,i) => {
       if(i===0){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
       }
     })
 
@@ -192,10 +194,10 @@ describe('stack work correctly', () => {
     cy.get('[data-cy="circle"]').each((el,i) => {
       if(i===0){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }else if(i===1){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
       }
     })
 
@@ -205,13 +207,13 @@ describe('stack work correctly', () => {
     cy.get('[data-cy="circle"]').each((el,i) => {
       if(i===0){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }else if(i===1){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }else if(i===2){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
       }
     })
 
@@ -221,16 +223,16 @@ describe('stack work correctly', () => {
     cy.get('[data-cy="circle"]').each((el,i) => {
       if(i===0){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }else if(i===1){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }else if(i===2){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }else if(i===3){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
       }
     })
 
@@ -239,16 +241,16 @@ describe('stack work correctly', () => {
     cy.get('[data-cy="circle"]').each((el,i) => {
       if(i===0){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }else if(i===1){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }else if(i===2){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }else if(i===3){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }
     })
   });
@@ -295,7 +297,7 @@ describe('queue work correctly',()=>{
     cy.get('[data-cy="circle"]').each((el,i) => {
       if(i===0){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
       }
     })
     cy.tick(1000); 
@@ -313,7 +315,7 @@ describe('queue work correctly',()=>{
     cy.get('[data-cy="circle"]').each((el,i) => {
       if(i===0){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }
     })
 
@@ -322,10 +324,10 @@ describe('queue work correctly',()=>{
     cy.get('[data-cy="circle"]').each((el,i) => {
       if(i===0){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }else if(i===1){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
       }
     })
     cy.tick(1000); 
@@ -343,10 +345,10 @@ describe('queue work correctly',()=>{
     cy.get('[data-cy="circle"]').each((el,i) => {
       if(i===0){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       } else if(i===1){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       } 
     })
   });
@@ -362,7 +364,7 @@ describe('queue work correctly',()=>{
     cy.get('[data-cy="circle"]').each((el,i) => {
       if(i===0){
         cy.wrap(el).should('have.text', `3`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
       }
     })
     cy.tick(1000);
@@ -409,16 +411,16 @@ describe('list work correctly',()=>{
     cy.get('[data-cy="circle"]').each((el,i) => {
       if(i===0){
         cy.wrap(el).should('have.text', `0`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       } else if(i===1){
         cy.wrap(el).should('have.text', `34`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       } else if(i===2){
         cy.wrap(el).should('have.text', `8`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       } else if(i===3){
         cy.wrap(el).should('have.text', `1`);
-        cy.wrap(el).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
       }
     })
     cy.get('[data-cy="circle"]').should('have.length', 4);
@@ -430,13 +432,13 @@ describe('list work correctly',()=>{
     cy.get('[data-cy="addToHead"]').click();
     cy.get('[data-cy="circle-container"] [data-cy="head"] [data-cy="circle"]').each((el,i)=>{
       if(i===0){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
         cy.wrap(el[0]).should('have.text' ,'3');
       }
     })
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       if(i===1){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
         cy.wrap(el[0]).should('have.text' ,'0');
       }
     })
@@ -445,7 +447,7 @@ describe('list work correctly',()=>{
 
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       if(i===0){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(127, 224, 81)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_127_224_81);
         cy.wrap(el[0]).should('have.text' ,'3');
       }
     })
@@ -459,7 +461,7 @@ describe('list work correctly',()=>{
 
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       if(i===0){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
         cy.wrap(el[0]).should('have.text' ,'3');
       }
     })
@@ -476,13 +478,13 @@ describe('list work correctly',()=>{
     cy.get('[data-cy="addToHead"]').click();
     cy.get('[data-cy="circle-container"] [data-cy="head"] [data-cy="circle"]').each((el,i)=>{
       if(i===0){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
         cy.wrap(el[0]).should('have.text' ,'3');
       }
     })
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       if(i===1){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
         cy.wrap(el[0]).should('have.text' ,'0');
       }
     })
@@ -491,7 +493,7 @@ describe('list work correctly',()=>{
 
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       if(i===0){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(127, 224, 81)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_127_224_81);
         cy.wrap(el[0]).should('have.text' ,'3');
       }
     })
@@ -505,7 +507,7 @@ describe('list work correctly',()=>{
     
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       if(i===0){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
         cy.wrap(el[0]).should('have.text' ,'3');
       }
     })
@@ -523,13 +525,13 @@ describe('list work correctly',()=>{
     cy.get('[data-cy="addByIndex"]').click()
     cy.get('[data-cy="circle-container"] [data-cy="head"] [data-cy="circle"]').each((el,i)=>{
       if(i===0){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)')
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225)
         cy.wrap(el[0]).should('have.text' ,'5')
       }
     })
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       if(i===1){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
         cy.wrap(el[0]).should('have.text' ,'0');
       }
     })
@@ -537,17 +539,17 @@ describe('list work correctly',()=>{
     cy.tick(1000);
     cy.get('[data-cy="circle-container"] [data-cy="head"] [data-cy="circle"]').each((el,i)=>{
       if(i===1){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
         cy.wrap(el[0]).should('have.text' ,'5');
       }
     })
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       if(i===0){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
         cy.wrap(el[0]).should('have.text' ,'0');
       }
       if(i===2){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
         cy.wrap(el[0]).should('have.text' ,'34');
       }
     })
@@ -556,23 +558,23 @@ describe('list work correctly',()=>{
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       switch (i) {
         case 0:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'0');
           break;
         case 1:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(127, 224, 81)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_127_224_81);
           cy.wrap(el[0]).should('have.text' ,'5');
           break;
         case 2:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'34');
           break;
         case 2:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'8');
           break;
         case 2:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'1');
           break;
       }
@@ -581,23 +583,23 @@ describe('list work correctly',()=>{
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       switch (i) {
         case 0:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'0');
           break;
         case 1:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'5');
           break;
         case 2:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'34');
           break;
         case 3:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'8');
           break;
         case 4:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'1');
           break;
       }
@@ -611,11 +613,11 @@ describe('list work correctly',()=>{
     
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       if(i===0){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
         cy.wrap(el[0]).should('have.text' ,'0');
       }
       if(i===1){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
         cy.wrap(el[0]).should('have.text' ,'34');
       }
     })
@@ -624,17 +626,17 @@ describe('list work correctly',()=>{
 
     cy.get('[data-cy="circle-container"] [data-cy="tail"] [data-cy="circle"]').each((el,i)=>{
       if(i===1){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
         cy.wrap(el[0]).should('have.text' ,'0');
       }
     })
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       if(i===0){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)')
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225)
         cy.wrap(el[0]).should('have.text' ,'');
       }
       if(i===2){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
         cy.wrap(el[0]).should('have.text' ,'34');
       }
     })
@@ -642,15 +644,15 @@ describe('list work correctly',()=>{
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       switch (i) {
         case 0:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'34');
           break;
         case 1:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'8');
           break;
         case 2:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'1');
           break;
       }
@@ -664,19 +666,19 @@ describe('list work correctly',()=>{
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       switch (i) {
         case 0:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'0');
           break;
         case 1:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'34');
           break;
         case 2:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'8');
           break;
         case 3:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'1');
           break;
       }
@@ -686,19 +688,19 @@ describe('list work correctly',()=>{
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       switch (i) {
         case 0:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'0');
           break;
         case 1:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'34');
           break;
         case 2:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'8');
           break;
         case 3:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'1');
           break;
       }
@@ -708,19 +710,19 @@ describe('list work correctly',()=>{
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       switch (i) {
         case 0:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'0');
           break;
         case 1:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'34');
           break;
         case 2:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'8');
           break;
         case 3:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'1');
           break;
       }
@@ -731,19 +733,19 @@ describe('list work correctly',()=>{
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       switch (i) {
         case 0:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'0');
           break;
         case 1:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'34');
           break;
         case 2:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'8');
           break;
         case 3:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'1');
           break;
       }
@@ -753,26 +755,26 @@ describe('list work correctly',()=>{
 
     cy.get('[data-cy="circle-container"] [data-cy="tail"] [data-cy="circle"]').each((el,i)=>{
       if(i===3){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
         cy.wrap(el[0]).should('have.text' ,'1');
       }
     })
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       switch (i) {
         case 0:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'0');
           break;
         case 1:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'34');
           break;
         case 2:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'8');
           break;
         case 3:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'');
           break;
       }
@@ -790,19 +792,19 @@ describe('list work correctly',()=>{
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       switch (i) {
         case 0:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'0');
           break;
         case 1:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'34');
           break;
         case 2:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'8');
           break;
         case 3:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'1');
           break;
       }
@@ -812,19 +814,19 @@ describe('list work correctly',()=>{
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       switch (i) {
         case 0:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'0');
           break;
         case 1:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'34');
           break;
         case 2:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'8');
           break;
         case 3:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'1');
           break;
       }
@@ -833,26 +835,26 @@ describe('list work correctly',()=>{
 
     cy.get('[data-cy="circle-container"] [data-cy="tail"] [data-cy="circle"]').each((el,i)=>{
       if(i===2){
-        cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+        cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
         cy.wrap(el[0]).should('have.text' ,'34');
       }
     })
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       switch (i) {
         case 0:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'0');
           break;
         case 1:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(210, 82, 225)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_210_82_225);
           cy.wrap(el[0]).should('have.text' ,'');
           break;
         case 3:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'8');
           break;
         case 4:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'1');
           break;
       }
@@ -861,15 +863,15 @@ describe('list work correctly',()=>{
     cy.get('[data-cy="circle-container"] [data-cy="circle"]').each((el,i)=>{
       switch (i) {
         case 0:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'0');
           break;
         case 1:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'8');
           break;
         case 2:
-          cy.wrap(el[0]).should('have.css', 'border-color', 'rgb(0, 50, 255)');
+          cy.wrap(el[0]).should(HAVE_CSS, BORDER_COLOR, RGB_0_50_255);
           cy.wrap(el[0]).should('have.text' ,'1');
           break;
       }
